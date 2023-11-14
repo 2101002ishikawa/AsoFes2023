@@ -1,0 +1,15 @@
+body{
+    font-family: "MS Mincho";
+    text-align: center;
+    color: red;
+    font-size:  25px;
+    background-image:url(../botan1Bk.jpg);
+}
+input[name="onoda"]{
+    width: 100px;
+    height: 30px;
+    margin-top: 150px;
+}
+p{
+    margin-top: 100px;
+}
