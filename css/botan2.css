@@ -1,0 +1,13 @@
+body{
+    font: "MS Mincho";
+    text-align: center;
+}
+input[name="rei"]{
+    width: 100px;
+    height: 30px;
+    margin-top: 15px;
+}
+p{
+    margin-top: 185px;
+    
+}
