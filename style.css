@@ -5,7 +5,7 @@ body{
     text-shadow: 1px 1px 0 #FFF, -1px -1px 0 #FFF,
     -1px 1px 0 #FFF, 1px -1px 0 #FFF,
     0px 1px 0 #FFF,  0-1px 0 #FFF,
-    -1px 0 0 #FFF, 1px 0 0 #FFF;;
+    -1px 0 0 #FFF, 1px 0 0 #FFF;
 }
 h1{
     font-size: 100px;
@@ -14,6 +14,12 @@ h1{
 p{
     font-size: 40px;
     margin-top: 100px;
+}
+.num{
+    font-size: 150%;
+}
+.name{
+    font-size: 150%;
 }
 img{
     width: 100%;
@@ -31,4 +37,5 @@ img{
     width: 220px;
     height: 70px;
     font-size: 40px;
+    font-family: "Times New Roman";
 }

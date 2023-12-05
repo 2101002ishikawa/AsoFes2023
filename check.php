@@ -14,16 +14,25 @@
     // sqlにデータを埋め込めるようにする
     $ninni = $dao->prepare($sql);
 
+    try{
+
     //sqlに必要なデータを埋め込む
     $ninni->bindValue(":student_id",$_POST['n1'],PDO::PARAM_STR);
     $ninni->bindValue(":student_name",$_POST['n2'],PDO::PARAM_STR);
+    date_default_timezone_set('Asia/Tokyo');
     $ninni->bindValue(":daytime",date("Y-m-d H:i:s"),PDO::PARAM_STR);
 
+    
     //実行する
     $ninni->execute();
 
     //実行結果によってページを遷移させる
    
-   header('Location:'.'botan1.html');
+   header('Location:'.'botan2.html');
+
+    
+    }catch(Exception $e){
+        header('Location:'.'botan1.html');
+    }
 
 ?>
