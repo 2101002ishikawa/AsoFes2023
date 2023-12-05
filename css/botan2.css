@@ -1,10 +1,11 @@
 body{
     font: "MS Mincho";
     text-align: center;
+    background-image:url(../img/ape-1024505_1920.png);
 }
 input[name="rei"]{
-    width: 100px;
-    height: 30px;
+    width: 500px;
+    height: 60px;
     margin-top: 15px;
 }
 p{

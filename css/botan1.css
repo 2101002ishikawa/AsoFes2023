@@ -2,13 +2,17 @@ body{
     font-family: "MS Mincho";
     text-align: center;
     color: red;
-    font-size:  25px;
+    font-size:  40px;
     background-image:url(../botan1Bk.jpg);
 }
-#rei{
-    width: 100px;
-    height: 30px;
-    margin-top: 150px;
+input[name="onoda"]{
+    width: 500px;
+    height: 100px;
+    margin-top: 180px;
+    background-color: red;
+    font-size: 150%;
+    font-family: "MS Mincho";
+    font-weight: 700;
 }
 p{
     margin-top: 100px;
