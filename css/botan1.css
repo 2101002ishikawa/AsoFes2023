@@ -6,8 +6,8 @@ body{
     background-image:url(../botan1Bk.jpg);
 }
 input[name="onoda"]{
-    width: 100px;
-    height: 30px;
+    width: 500px;
+    height: 60px;
     margin-top: 150px;
 }
 p{
