@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>管理者画面</title>
+    <link rel="stylesheet" href="owner.css">
 </head>
 <body>
-
-    <label for="searchKeyword">検索:</label>
-    <input type="text" id="searchKeyword" name="searchKeyword">
-    <button onclick='searchStudents()'>検索</button>
+    <div class="kensaku">
+        <label for="searchKeyword">学籍番号検索:</label>
+        <input type="text" id="searchKeyword" name="searchKeyword">
+        <button class="kensaku2" onclick='searchStudents()'>検索</button>
+    </div>
         
 <?php
     require_once 'DAO.php';
@@ -34,8 +36,10 @@
                     <td>" . $row['student_name'] . "</td>
                     <td>" . $row['daytime'] . "</td>
                     <td>" . $row['flag'] . "</td>
-                    <td><button onclick='openModal(\"" . $row['student_id'] . "\", \"" . $row['student_name'] . "\", \"" . $row['daytime'] . "\", \"" . $row['flag'] . "\")'>更新</button></td>
-                    <td> <button onclick='confirmDelete(".$row['student_id'].")'>削除</button></td>
+                    <div  class='botan'>
+                        <td><button onclick='openModal(\"" . $row['student_id'] . "\", \"" . $row['student_name'] . "\", \"" . $row['daytime'] . "\", \"" . $row['flag'] . "\")'>更新</button></td>
+                        <td> <button onclick='confirmDelete(".$row['student_id'].")'>削除</button></td>
+                    </div>
                 </tr>";
         }
 
