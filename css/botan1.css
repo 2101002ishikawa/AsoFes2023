@@ -3,7 +3,7 @@ body{
     text-align: center;
     color: red;
     font-size:  40px;
-    background-image:url(../botan1Bk.jpg);
+    background-image:url(../img/botan1Bk.jpg);
 }
 input[name="onoda"]{
     width: 500px;
