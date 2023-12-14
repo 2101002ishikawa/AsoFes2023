@@ -13,6 +13,18 @@
         <input type="text" class="num" name="n1">
         <p>氏名</p>
         <input type="text" class="name" name="n2"><br>
+       
+        <?php 
+            if ($_GET) {
+                echo" <div>
+                <p class='era'> </p>"
+              .$_GET['errTxt']."
+    
+    
+            </div>";
+            }
+            
+            ?>
         <input type="submit" class="form" value="Enter">
     </form>
 </body>
