@@ -1,10 +1,10 @@
 body{
     background-image: url(img/christmas-1911637_1280.jpg);
     font-family: "MS Mincho";
-    text-align: center; 
+    text-align: center;
 }
 .moji{
-    
+   
     text-shadow: 1px 1px 0 #FFF, -1px -1px 0 #FFF,
     -1px 1px 0 #FFF, 1px -1px 0 #FFF,
     0px 1px 0 #FFF,  0-1px 0 #FFF,
@@ -14,7 +14,7 @@ body{
     background-color: #FFF;
     width: 42%;
     margin-left: 28%;
-    
+   
 }
 .era{
     color:red;
