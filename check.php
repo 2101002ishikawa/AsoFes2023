@@ -37,6 +37,8 @@ try {
 
     //実行する
     $ninni->execute();
+    
+    header('Location:'.'botan2.html');
 
     // 実行結果によってページを遷移させる
     header('Location: botan2.html');
