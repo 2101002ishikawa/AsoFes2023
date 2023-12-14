@@ -7,19 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>射的システム</h1>
-    <p>学籍番号</p>
+    <h1 class="moji">射的システム</h1>
+    <p class="moji">学籍番号</p>
     <form action="check.php" method="post">
         <input type="text" class="num" name="n1">
-        <p>氏名</p>
+        <p class="moji">氏名</p>
         <input type="text" class="name" name="n2"><br>
        
         <?php 
             if ($_GET) {
-                echo" <div>
-                <p class='era'> </p>"
-              .$_GET['errTxt']."
-    
+                echo" <div class='mes'>
+                <p class='era'> "
+              .$_GET['errTxt']."</p>
+                
     
             </div>";
             }
