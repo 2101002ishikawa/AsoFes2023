@@ -1,46 +1,52 @@
 <?php
+ob_start(); // アウトプットバッファリングを有効にする
 
-
-    try {
-        
-    } catch (\Throwable $th) {
-        header("index.php?errTxt='エラーが発生しました'");
+try {
+    if (empty($_POST['n2'])) {
+        throw new Exception();
     }
-    
-    // データベースに関する情報を記載する
-    // $dao = new PDO('mysql:host=mysql220.phy.lolipop.lan;dbname=LAA1417839-asofes2023;charset=utf8','LAA1417839','asofes2023');
-    $dao = new PDO('mysql:host=localhost;dbname=AsoFes;charset=utf8','asofes','asofes2023');
+    if ($_POST['n1'] >= 2400000 || $_POST['n1'] < 2000000) {
+        throw new Exception();
+    }
+} catch (Exception $th) {
+    header("Location: index.php?errTxt=エラーが発生しました");
+    exit(); // ヘッダを送信した後はスクリプトを終了する
+}
 
-    //sqlの記述
-    $sql = "INSERT INTO `Students`(`student_id`, `student_name`, `daytime`, `flag`) VALUES (:student_id,:student_name,:daytime,'Y')";
- 
-    // sqlにデータを埋め込めるようにする
-    $ninni = $dao->prepare($sql);
+// データベースに関する情報を記載する
+$dao = new PDO(
+    'mysql:host=localhost;
+    dbname=AsoFes;
+    charset=utf8',
+    'asofes',
+    'asofes2023'
+);
 
-    //バリテーションの追加
-    try{
+//sqlの記述
+$sql = "INSERT INTO `students`(`student_id`, `student_name`, `daytime`, `flag`) VALUES (:student_id,:student_name,:daytime,'Y')";
 
-        
+// sqlにデータを埋め込めるようにする
+$ninni = $dao->prepare($sql);
 
+try {
     //sqlに必要なデータを埋め込む
-    $ninni->bindValue(":student_id",$_POST['n1'],PDO::PARAM_STR);
-    $ninni->bindValue(":student_name",$_POST['n2'],PDO::PARAM_STR);
+    $ninni->bindValue(":student_id", $_POST['n1'], PDO::PARAM_STR);
+    $ninni->bindValue(":student_name", $_POST['n2'], PDO::PARAM_STR);
     date_default_timezone_set('Asia/Tokyo');
-    $ninni->bindValue(":daytime",date("Y-m-d H:i:s"),PDO::PARAM_STR);
+    $ninni->bindValue(":daytime", date("Y-m-d H:i:s"), PDO::PARAM_STR);
 
-    
     //実行する
     $ninni->execute();
     
     header('Location:'.'botan2.html');
 
-    //実行結果によってページを遷移させる
-   
-   header('Location:'.'botan2.html');
+    // 実行結果によってページを遷移させる
+    header('Location: botan2.html');
+    exit(); // ヘッダを送信した後はスクリプトを終了する
+} catch (Exception $e) {
+    header('Location: botan1.html');
+    exit(); // ヘッダを送信した後はスクリプトを終了する
+}
 
-    
-    }catch(Exception $e){
-        header('Location:'.'botan1.html');
-    }
-
+ob_end_flush(); // アウトプットバッファリングを終了し、バッファの内容を出力する
 ?>
