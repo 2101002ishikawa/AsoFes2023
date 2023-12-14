@@ -1,21 +1,26 @@
 <?php
+
+
+    try {
+        
+    } catch (\Throwable $th) {
+        header("index.php?errTxt='エラーが発生しました'");
+    }
     
     // データベースに関する情報を記載する
-    $dao = new PDO(
-                'mysql:host=localhost;
-                dbname=AsoFes;
-                charset=utf8',   
-                'asofes',
-                'asofes2023'
-    );
+    // $dao = new PDO('mysql:host=mysql220.phy.lolipop.lan;dbname=LAA1417839-asofes2023;charset=utf8','LAA1417839','asofes2023');
+    $dao = new PDO('mysql:host=localhost;dbname=AsoFes;charset=utf8','asofes','asofes2023');
 
     //sqlの記述
-    $sql = "INSERT INTO `students`(`student_id`, `student_name`, `daytime`, `flag`) VALUES (:student_id,:student_name,:daytime,'Y')";
+    $sql = "INSERT INTO `Students`(`student_id`, `student_name`, `daytime`, `flag`) VALUES (:student_id,:student_name,:daytime,'Y')";
  
     // sqlにデータを埋め込めるようにする
     $ninni = $dao->prepare($sql);
 
+    //バリテーションの追加
     try{
+
+        
 
     //sqlに必要なデータを埋め込む
     $ninni->bindValue(":student_id",$_POST['n1'],PDO::PARAM_STR);
