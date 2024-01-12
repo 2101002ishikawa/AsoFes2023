@@ -21,6 +21,7 @@ $dao = new PDO(
     'asofes',
     'asofes2023'
 );
+// $dao = new PDO('mysql:mysql220.phy.lolipop.lan;dbname=LAA1417839-asofes2023;charset=utf8','LAA1417839','asofes2023');
 
 //sqlの記述
 $sql = "INSERT INTO `students`(`student_id`, `student_name`, `daytime`, `flag`) VALUES (:student_id,:student_name,:daytime,'Y')";
